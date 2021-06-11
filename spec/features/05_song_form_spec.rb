@@ -73,7 +73,7 @@ describe "Song Forms" do
       it "redirects to '/songs/:slug' after creation" do
         fill_in "Name", with: song_name
         check "New Age Garbage"
-        fill_in "Artist Name", with: artist_name
+        fill_in "Arist Name", with: artist_name
         click_on "Create"
         expect(page.current_path).to eq('/songs/that-one-with-the-guitar')
       end
@@ -95,7 +95,7 @@ describe "Song Forms" do
 
     context "changing a song's artist" do
       it "updates the song's artist" do
-        fill_in "Artist Name", with: "Some Nobody"
+        fill_in "Arist Name", with: "Some Nobody"
         click_on "Save"
 
         expect(page).to have_content("Successfully updated song.")
@@ -104,7 +104,7 @@ describe "Song Forms" do
       end
 
       it "renders to the song show page" do
-        fill_in "Artist Name", with: "That singer"
+        fill_in "Arist Name", with: "That singer"
         click_on "Save"
         expect(page.current_path).to eq("/songs/that-one-with-the-guitar")
       end
